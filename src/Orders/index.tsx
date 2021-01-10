@@ -10,15 +10,13 @@ function Orders() {
     const [products, setProducts] = useState<Product[]>([]);
     const [orderLocation, setOrderLocation] = useState<OrderLocationdata>(); 
     
-
-    useEffect(() => {
+useEffect(() => {
         fetchProducts()
         .then(response => setProducts(response.data))
         .catch(error => console.log(error))
     }, []);
 
-    
-    return (
+return (
         <div className="orders-container">
         <StepsHeader />
         <ProductsList products={products} />
@@ -28,3 +26,4 @@ function Orders() {
 }
 
 export default Orders;
+
