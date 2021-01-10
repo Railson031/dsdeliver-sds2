@@ -5,6 +5,7 @@ import './styles.css';
 import { OrderLocationdata , Product } from './types';
 import { fetchProducts } from '../api';
 import OrderLocation from './OrderLocation';
+import OrderSummary from './OrderSummary';
 
 function Orders() {
     const [products, setProducts] = useState<Product[]>([]);
@@ -21,6 +22,7 @@ return (
         <StepsHeader />
         <ProductsList products={products} />
         <OrderLocation  onChangeLocation ={location => setOrderLocation(location)}/>
+        <OrderSummary />
         </div>
     )
 }
